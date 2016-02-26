@@ -49,6 +49,9 @@ var C = {
     },
     defaultSkin : function(){
         return C.staticPath() + '/skin/img/char.png';
+    },
+    quizSkin : function(){
+        return C.staticPath() + '/quiz/img/cirno.png';
     }
 };
 
