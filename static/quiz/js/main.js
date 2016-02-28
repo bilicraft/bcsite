@@ -9,4 +9,15 @@ $(function(){
 
 	var btnNext   = ui('#btn-next');
 
+
+	var life = ui('#life');
+	life.val = function(v){
+		if(v === undefined){
+			return this.hp || 0;
+		}
+		this.hp = v;
+		this.element.style.height = Math.floor(400 * v) + 'px';
+	};
+
+
 });

@@ -1,0 +1,102 @@
+quiz模块协议文档
+
+# 符号约定：
+# >> 表示浏览器以AJAX传递给服务端的POST参数
+# << 表示服务端以JSON格式返回的结果
+# >> 或 << 后无内容时表示没有参数或者直接调用`IO::O();`空参数返回
+# 任何出错直接用IO::E("错误内容")返回
+# foo.bar表示foo模块的bar名称的方法
+# 所有bool类型定义为0或1的uint
+
+
+定义数据结构（前端所需）：
+
+# 问题
+{question} = {
+	id, 			# 数据ID
+	content,		# 问题内容
+	answer,			# 问题答案
+	ignore_case,	# 答案是否忽略大小写
+}
+
+# 答题session
+# 当用户开始答题后，建立一个session数据结构以描述用户答题状态
+{session} = {
+	id,
+	uid,			# 用户ID
+	total,			# 需回答的题目总数
+	answered,		# 已回答的题目总数
+	correct,		# 回答正确数
+	start_time,		# 开始回答的时间戳
+	end_time,		# 结束回答的时间戳
+	question_ids,	# 题目ID列表，形如"1,2,3"的字符串形式
+}
+
+
+quiz.configure
+# 配置答题系统
+>>
+	total 		uint	出题数量
+	correct		uint	需要答对的题目数量
+<<
+
+
+quiz.add_question
+# 添加问题
+>> 
+	content 		string	问题内容
+	answer  		string 	问题答案
+	ignore_case 	bool	答案是否忽略大小写
+<< 
+	{
+		question : {question}
+	}
+	
+
+
+quiz.rm_questions
+# 删除多个问题
+>> 
+	ids	string	形如"1,2,3,4,5"字符串描述的问题ID列表
+<< 
+
+
+quiz.edit_question
+# 编辑问题
+>> 
+	id 
+	content
+	answer
+	ignore_case
+<<
+	{
+		question : {question}
+	}
+	
+
+quiz.start
+# 开始答题，如未开始则创建session开始答题，如已开始则返回当前需要回答的题目信息
+>>
+<< 
+	{
+		session : {session},
+		question_content : "string 题目内容",
+	}
+
+
+quiz.answer
+# 回答题目
+>> 
+	answer	string	回答内容
+<<
+	{
+		state   : "回答情况，值为：	
+						'correct' 表示正确，
+						'wrong'   表示错误，
+						'failed'  表示错误数量达到上限并结束答题，
+						'success' 表示答题完毕"
+		session : {session},
+		question_content : "string 下一道题目内容，如无则置为null",
+	}
+
+
