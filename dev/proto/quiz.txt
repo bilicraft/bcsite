@@ -100,3 +100,14 @@ quiz.answer
 	}
 
 
+quiz.list_question
+# 获取题库中的题目列表
+>>
+	offset	uint	从第几条开始
+	limit	uint	获取多少条
+<<
+	[
+		{question},
+		{question},
+		...
+	]
