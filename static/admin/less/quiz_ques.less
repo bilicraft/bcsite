@@ -1,0 +1,206 @@
+@import "../../public/less/ui.var.less";
+
+.quiz-list{
+	background-color:#f5f5f5;
+	min-height:438px;
+}
+.quiz-list-item{
+	width:904px;
+	height:auto;
+	min-height:1px;
+	overflow:hidden;
+	clear:both;
+	margin:8px;
+	border:@border-weak;
+	background-color:#fff;
+	position:relative;
+	padding-top:48px;
+	padding-bottom:40px;
+	> .id{
+		width:auto;
+		min-width:1px;
+		overflow:hidden;
+		height:40px;
+		position:absolute;
+		left:8px;
+		top:0;
+		background-color:@back-weak;
+		position:absolute;
+		> .k{
+			width:16px;
+			height:16px;
+			top:0;
+			left:0;
+			color:#333;
+			font-size:16px;
+			text-align:center;
+			position:absolute;
+		}
+		.v{
+			width:auto;
+			min-width:1px;
+			overflow:hidden;
+			color:@blue-normal;
+			font-size:24px;
+			line-height:40px;
+			height:40px;
+			overflow:hidden;
+			float:left;
+			margin:0 16px;
+		}
+	}
+	> .question{
+		width:904px - 16;
+		height:auto;
+		min-height:1px;
+		overflow:hidden;
+		clear:both;
+		margin:0 auto;
+		position:relative;
+		> .k{
+			position:absolute;
+			left:0;
+			top:0;
+			width:90px;
+			height:24px;
+			font-size:12px;
+			line-height:24px;
+			color:#555;
+			text-align:center;
+			background-color:@back-weak;
+		}
+		> .v{
+			width:100%;
+			line-height:24px;
+			font-size:14px;
+			overflow:hidden;
+			height:auto;
+			text-indent:90px;
+			color:#333;
+		}
+	}
+	> .answer{
+		position:absolute;
+		bottom:0;
+		right:8px;
+		width:auto;
+		min-width:1px;
+		height:40px;
+		> .k{
+			float:left;
+			width:auto;
+			min-width:1px;
+			overflow:hidden;
+			height:40px;
+			line-height:40px;
+			font-size:12px;
+			color:#777;
+		}
+		> .v{
+			float:left;
+			width:auto;
+			min-width:1px;
+			overflow:hidden;
+			height:40px;
+			line-height:40px;
+			font-size:14px;
+			color:#555;
+		}
+	}
+	> .ctrl{
+		position:absolute;
+		right:4px;
+		top:0;
+		width:auto;
+		min-width:1px;
+		height:40px;
+		overflow:hidden;
+		> .ctrl-item{
+			width:32px;
+			height:32px;
+			float:left;
+			text-align:center;
+			line-height:32px;
+			margin:4px;
+			background-color:@back-weak;
+			color:#555;
+			cursor:pointer;
+		}
+		> .ctrl-item:hover{
+			color:@blue-hover;
+		}
+		> .ctrl-item:active{
+			color:@blue-active;
+		}
+	}
+	> .rule{
+		position:absolute;
+		left:8px;
+		bottom:0;
+		width:auto;
+		min-width:1px;
+		height:40px;
+		overflow:hidden;
+		.rule-item{
+			float:left;
+			width:auto;
+			min-width:1px;
+			height:40px;
+			> .k{
+				float:left;
+				width:auto;
+				min-width:1px;
+				overflow:hidden;
+				height:40px;
+				line-height:40px;
+				font-size:12px;
+				color:#777;
+			}
+			> .v{
+				float:left;
+				width:auto;
+				min-width:1px;
+				overflow:hidden;
+				height:40px;
+				line-height:40px;
+				font-size:14px;
+				color:#555;
+			}
+		}
+	}
+}
+.quiz-list-item.editing{
+	> .ctrl{
+		display:none;
+	}
+	> .question,
+	> .answer,
+	> .rule{
+		opacity:0.6;
+	}
+}
+.quiz-edit-frame{
+	width:904px - 16px;
+	height:auto;
+	min-height:1px;
+	overflow:hidden;
+	margin:8px auto;
+	background-color:#ddd;
+	border:1px @green-normal solid;
+	box-shadow:0 0 8px rgba(0, 0, 0, .3);
+	display:none;
+	.on-add,
+	.on-edit{
+		display:none;
+	}
+}
+.quiz-edit-frame.is-add{
+	.on-add{
+		display:block;
+	}
+}
+.quiz-edit-frame.is-edit{
+	.on-edit{
+		display:block;
+	}
+}

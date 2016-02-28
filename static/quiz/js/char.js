@@ -424,9 +424,9 @@ function Char(global, container) {
 			// console.log(runtime.handRad);
 			// 
 			if(runtime.handRadXReverse){
-				runtime.handRadX -= 0.005;
+				runtime.handRadX -= 0.01;
 			}else{
-				runtime.handRadX += 0.005;
+				runtime.handRadX += 0.01;
 			}
 			if(runtime.handRadX > 1.5 || runtime.handRadX < 1.2){
 				runtime.handRadXReverse = ~runtime.handRadXReverse;

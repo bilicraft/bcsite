@@ -1,0 +1,88 @@
+<div class="col visi all">
+	<div class="row" id="row-add">
+		<div class="button right with-icon green margin-right" id="btn-add">
+			<i class="icon-plus"></i>
+			<span>新题目</span>
+		</div>
+	</div>
+</div>
+<div class="col visi all margin-top">
+	<div class="row x1">
+		
+	</div>
+	<div class="row quiz-list" id="quiz-list">
+
+	</div>
+	<div class="row x1">
+		<div class="simple-pages" id="quiz-list-sp"></div>
+	</div>
+	<div class="tpl" id="tpl">
+		<div class="quiz-list-item" data-node="dwQuizListItem">
+			<div class="id" data-node="dwID">
+				<div class="k">#</div>
+				<div class="v" data-node="dwText"></div>
+			</div>
+			<div class="question" data-node="dwQuestion">
+				<div class="k">问题内容：</div>
+				<div class="v" data-node="dwText"></div>
+			</div>
+			<div class="answer" data-node="dwAnswer">
+				<div class="k">答案：</div>
+				<div class="v" class="answer" data-node="dwText"></div>
+			</div>
+			<div class="rule" data-node="dwRule">
+			</div>
+			<div class="ctrl">
+				<div class="ctrl-item ft" data-action="edit" data-flex="修改">
+					<i class="icon-edit"></i>
+				</div>
+				<div class="ctrl-item ft" data-action="remove" data-flex="删除">
+					<i class="icon-trash"></i>
+				</div>
+			</div>
+		</div>
+		<div class="quiz-edit-frame" data-node="dwQuizEditFrame">
+			<div class="row x1" data-node="dwRowHead">
+				<div class="label free with-icon green on-add">
+					<i class="icon-plus"></i>
+					<span>添加题目</span>
+				</div>
+				<div class="label free with-icon green on-edit">
+					<i class="icon-edit"></i>
+					<span>修改题目</span>
+				</div>
+				<div class="button right margin-right with-icon red slim" data-node="dwBtnRemove">
+					<i class="icon-remove"></i>
+				</div>
+			</div>
+			<div class="hor-split"></div>
+			<div class="row x1">
+				<div class="label free margin-left">
+					<span>题目内容：</span>
+				</div>
+			</div>
+			<div class="row x2" data-node="dwRowText">
+				<div class="auto-text-out" data-node="dwO">
+					<div class="in"data-node="dwI">
+						<textarea data-node="dwText"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="row x1" data-node="dwRowAnswer">
+				<div class="textbox margin-left" data-node="dwAnswer">
+					<div class="label">答案：</div>
+					<input type="text" />
+				</div>
+				<div class="toggle" data-node="dwCase"></div>
+				<div class="label free">
+					<span>区分大小写</span>
+				</div>
+			</div>
+			<div class="row x1" data-node="dwRowRule">
+				<div class="button right margin-right green" data-node="dwBtnSave">
+					<span>保存题目</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

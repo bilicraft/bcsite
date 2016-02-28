@@ -55,4 +55,12 @@ class module_admin{
 		]);
 	}
 
+	public function quiz_ques(){
+		TPL::show('admin/quiz_ques');
+	}
+
+	public function quiz_session(){
+		TPL::show('admin/quiz_session');
+	}
+
 }

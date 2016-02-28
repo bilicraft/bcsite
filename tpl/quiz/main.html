@@ -6,15 +6,24 @@
 		<div class="life" id="life"></div>
 	</div>
 	<div class="blackboard">
-		<div class="question">
-			1 + 1 = ？<br>
-			A、9 <br>
-			B、9 <br>
-			C、9 <br>
-			D、9 <br>
+		<div class="question" id="quiz-question">
+			
 		</div>
-		<div class="board-mask correct">
+		<canvas id="voice-cvs"></canvas>
+		<div class="board-mask loading" id="vv-loading">
+			少女思考中……
+		</div>
+		<div class="board-mask correct" id="vv-correct">
 			回答正确
+		</div>
+		<div class="board-mask wrong" id="vv-wrong">
+			回答错误
+		</div>
+		<div class="board-mask failed" id="vv-failed">
+			HP归零，请重新再来。
+		</div>
+		<div class="board-mask success" id="vv-success">
+			恭喜你！过关获得白名单！
 		</div>
 	</div>
 </div>
@@ -22,11 +31,11 @@
 	<div class="row x1">
 		<div class="label free">
 			<span>正在回答第</span>
-			<span id="current-num">1</span>
+			<span id="current-num">?</span>
 			<span>题，一共</span>
-			<span id="total-num">9</span>
+			<span id="total-num">?</span>
 			<span>题，已答对</span>
-			<span id="correct-num">9</span>
+			<span id="correct-num">?</span>
 			<span>题</span>
 		</div>
 		
@@ -34,7 +43,7 @@
 	<div class="hor-split-margin"></div>
 	<div class="row x1">
 		<div class="bc-button margin-right right" id="btn-next">
-			<span>确定</span>
+			<span>回答</span>
 		</div>
 		<input type="text" class="input x3 margin-right right" id="ipt-answer">
 		<div class="label margin-right right">

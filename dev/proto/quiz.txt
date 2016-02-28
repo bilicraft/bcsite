@@ -25,6 +25,7 @@ quiz模块协议文档
 	id,
 	uid,			# 用户ID
 	total,			# 需回答的题目总数
+	die_on,			# 错误多少题死亡
 	answered,		# 已回答的题目总数
 	correct,		# 回答正确数
 	start_time,		# 开始回答的时间戳
@@ -109,5 +110,17 @@ quiz.list_question
 	[
 		{question},
 		{question},
+		...
+	]
+
+quiz.list_question
+# 获取题库中的session列表
+>>
+	offset	uint	从第几条开始
+	limit	uint	获取多少条
+<<
+	[
+		{session},
+		{session},
 		...
 	]

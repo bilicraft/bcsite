@@ -15,6 +15,15 @@ class config_tpl_quiz_main{
             'js'  => [
                 'skin/js/three.min',
                 'quiz/js/char',
+                'public/js/dict',
+                'public/js/Base64binary',
+                'public/js/replayer',
+                'public/js/midi.min',
+                'public/js/midi.file',
+                // 'public/js/midi.loader',
+                // 'public/js/midi.audiodetect',
+                'public/js/midi.stream',
+                // 'public/js/midi.player',
                 'quiz/js/main'
             ],
             'navi' => [
